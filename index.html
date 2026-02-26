@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="cats"></div>
+
+<script src="script.js"></script>
+<script>
+let cats_container = document.getElementById("cats")
+let n = 0;
+
+let t = 0;
+let titles = [
+    "Имя",
+    "Возраст",
+    "Оценка",
+    "Любимчик",
+    "Описание",
+    "Номер"
+]
+for (let element of cats) {
+    cats_container.innerHTML += `<div id="div${n}"></div>`
+    for (let cat in element) {
+        if (cat !== "img_link") {
+            cats_container.innerHTML += `<p>${titles[t]}: ${element[cat]}`
+        } else {
+            cats_container.innerHTML += `<img src=${element[cat]}>`
+            t--
+        }
+        t++
+    }
+    let div = document.getElementById(`div${n}`)
+    div.style.border = "1px solid black"
+    cats_container.innerHTML += "<p>\n\n\n\n</p>"
+    n++;
+    t = 0;
+}
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
