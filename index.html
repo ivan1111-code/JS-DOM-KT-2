@@ -27,7 +27,7 @@ for (let element of cats) {
     cats_container.innerHTML += `<div id="div${n}"></div>`
     for (let cat in element) {
         if (cat !== "img_link") {
-            cats_container.innerHTML += `<p>${titles[t]}: ${element[cat]}`
+            cats_container.innerHTML += `<p><i>${titles[t]}: ${element[cat]}</i></p>`
         } else {
             cats_container.innerHTML += `<img src=${element[cat]}>`
             t--
@@ -40,13 +40,6 @@ for (let element of cats) {
     n++;
     t = 0;
 }
-
-
-
-
-
-
-
 
 </script>
 </body>
